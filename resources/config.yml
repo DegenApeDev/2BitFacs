@@ -1,0 +1,7 @@
+# 2BitFacs Config
+
+# Max players in one faction (O for infinite players)
+maxplayers: 0
+
+# Allows the user to disable /fop which allows server OP's to manage factions
+fop: true
