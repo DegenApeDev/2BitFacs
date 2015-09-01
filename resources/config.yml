@@ -1,7 +1,16 @@
-# 2BitFacs Config
+#2BitFacs Main Configuration 
+#Copyright (C) 2015 2-Bit Realms
+#All Rights Reserved
 
-# Max players in one faction (O for infinite players)
-maxplayers: 0
+#----------[Faction Preferences]----------#
+MaxFactionNameLength: 10
+MaxPlayersPerFaction: 20
 
-# Allows the user to disable /fop which allows server OP's to manage factions
-fop: true
+#---[Claiming Preferences]---#
+ClaimingEnabled: true
+ModsCanClaim: true
+ModsCanUnclaim: true
+
+#---[Staff Preferences]---#
+#Is the /f admin command allowed?
+AdminModeEnabled: false
