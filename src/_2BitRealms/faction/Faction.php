@@ -2,8 +2,9 @@
 namespace _2BitRealms\faction;
 class Faction {
 	
-	private $name = "Wilderness";
-	private $description = "Default description :(";
+	private $name;
+	private $description;
+	private $leader;
 	
 	public function getName(){
 		return $this->name;
@@ -15,6 +16,8 @@ class Faction {
 	
 	public function __construct($name, $leader){
 		$this->name = $name;
+		$this->description = "Default description :(";
+		$this->leader = $leader;
 		//TODO: Finish
 	}
 	
