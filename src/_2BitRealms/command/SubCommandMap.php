@@ -42,7 +42,7 @@ class SubCommandMap extends PluginCommand {
         $canUse = $command->canUse($sender);
         if ($canUse) {
             if (!$command->execute($sender, $args)) {
-                $sender->sendMessage(TextFormat::YELLOW."Usage: /f " . $command->getName() . " " . $command->getUsage());
+            //    $sender->sendMessage(TextFormat::YELLOW."Usage: /f " . $command->getName() . " " . $command->getUsage());
             }
         } elseif (!($sender instanceof Player)) {
             $sender->sendMessage(TextFormat::RED . "Please run this command in-game.");

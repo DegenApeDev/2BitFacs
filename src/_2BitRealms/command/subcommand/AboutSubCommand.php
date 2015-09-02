@@ -3,6 +3,7 @@ namespace _2BitRealms\command\subcommand;
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
 use pocketmine\utils\TextFormat;
+use _2BitRealms\command\Subcommand;
 class AboutSubCommand extends SubCommand {
 	
     public function canUse(CommandSender $sender) {
