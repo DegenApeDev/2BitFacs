@@ -37,7 +37,7 @@ class CreateSubCommand extends SubCommand {
 			$sender->sendMessage(Colour::RED. "Usage: /f create <faction name>");
 			return true;
 		}
-		if(!(ctype_alnum($args[1]))) {
+		if(!(ctype_alnum($args[0]))) {
 			$sender->sendMessage(Colour::YELLOW. "Faction name can only contain letters");
 			return true;
 		}
