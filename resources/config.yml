@@ -2,15 +2,22 @@
 #Copyright (C) 2015 2-Bit Realms
 #All Rights Reserved
 
-#----------[Faction Preferences]----------#
+#Do NOT Change or the plugin WILL break.
+plugin-version: 0.0.1
+
+#------------[Faction Preferences]------------#
 MaxFactionNameLength: 10
+MinFactionNameLength: 0
 MaxPlayersPerFaction: 20
 
-#---[Claiming Preferences]---#
+#----[Claiming Preferences]----#
 ClaimingEnabled: true
 ModsCanClaim: true
 ModsCanUnclaim: true
 
-#---[Staff Preferences]---#
-#Is the /f bypass command allowed?
-AdminModeEnabled: false
+#----[Chat Preferences]----#
+FactionChatTag: true
+FactionChatColour: GREEN
+
+#----[Staff Preferences]----#
+AdminBypassEnabled: false
