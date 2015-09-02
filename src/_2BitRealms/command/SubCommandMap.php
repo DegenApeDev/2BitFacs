@@ -14,7 +14,7 @@ class SubCommandMap extends PluginCommand {
     public function __construct(_2BitFacs $plugin) {
         parent::__construct("f", $plugin);
         $this->setAliases(["faction"]);
-        $this->setPermission("2bitfacs.vommand.f");
+        $this->setPermission("2bitfacs.command.f");
         $this->setDescription("Main command for _2BitFacs!");
         
     }

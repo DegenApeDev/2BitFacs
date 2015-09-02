@@ -9,7 +9,7 @@ abstract class SubCommand{
     /**
      * @param _2BitFacs $plugin
      */
-    public function __construct(MyPlot $plugin){
+    public function __construct(_2BitFacs $plugin){
         $this->plugin = $plugin;
     }
     /**
