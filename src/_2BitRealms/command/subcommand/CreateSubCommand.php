@@ -33,8 +33,8 @@ class CreateSubCommand extends SubCommand {
 			return true;
 		}
 		if(count($args) >= 2){
-			$sender->sendMessage(Colour::YELLOW. "Too many arguments!");
-			$sender->sendMessage(Colour::YELLOW. "Usage: /f create <faction name>");
+			$sender->sendMessage(Colour::RED. "Too many arguments!");
+			$sender->sendMessage(Colour::RED. "Usage: /f create <faction name>");
 			return true;
 		}
 		if(!(ctype_alnum($args[1]))) {

@@ -6,6 +6,7 @@ use pocketmine\utils\TextFormat;
 use pocketmine\Player;
 use _2BitRealms\_2BitFacs;
 use _2BitRealms\command\subcommand\AboutSubCommand;
+use _2BitRealms\command\subcommand\CreateSubCommand;
 class SubCommandMap extends PluginCommand {
 	
     private $subCommands = [];
@@ -18,7 +19,7 @@ class SubCommandMap extends PluginCommand {
         $this->setPermission("2bitfacs.command.f");
         $this->setDescription("Main command for _2BitFacs!");
         $this->loadSubCommand(new AboutSubCommand($plugin));
-        
+        $this->loadSubCommand(new CreateSubCommand($plugin));
     }
 	
     private function loadSubCommand(Subcommand $command) {
