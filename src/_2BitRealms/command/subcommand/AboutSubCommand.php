@@ -27,9 +27,8 @@ class AboutSubCommand extends SubCommand {
     }
 	
     public function execute(CommandSender $sender, array $args) {
-        $sender->sendMessage("§b_2BitFacs §eby §cDevBrad§e,§c 64FF00§e, and §cTheDiamondYT");
-		$sender->sendMessage("§bhttps://github.com/2-BitRealms/_2BitFacs");
-		$sender->sendMessage("§bAll Rights Reserved");
+        $sender->sendMessage("§e_2BitFacs by DevBrad, 64FF00, TheDiamondYT");
+         $sender->sendMessage("§eAll Rights Reserved");
     }
 	
 }
