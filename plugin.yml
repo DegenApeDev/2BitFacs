@@ -7,8 +7,14 @@ api: [1.12.0]
 commands: 
   f: 
    description: 2BitFacs main command. 
-   permission: 2bitfacs.f 
+   permission: 2bitfacs.f
+  fop:
+  description: 2BitFacs OP command.
+  permission: 2bitfacs.fop
 permissions: 
  2bitfacs.f: 
    default: true 
    description: "2BitFacs main command"
+ 2bitfacs.fop:
+   default: op
+   description: "2BtFacs OP command"
