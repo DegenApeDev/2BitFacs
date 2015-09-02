@@ -13,7 +13,7 @@ class Faction {
 		return $this->description;
 	}
 	
-	public function __construct($name){
+	public function __construct($name, $leader){
 		$this->name = $name;
 		//TODO: Finish
 	}
