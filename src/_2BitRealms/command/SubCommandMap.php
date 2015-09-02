@@ -50,5 +50,8 @@ class SubCommandMap extends PluginCommand {
         return true;
 	}
 	
-}
+	public function sendHelp(Player $player){
+		$player->sendMessage("TODO");
+	}
 	
+}
