@@ -3,7 +3,7 @@ namespace _2BitRealms;
 use pocketmine\utils\Config;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use _2BitFacs\command\SubCommandMap;
+use _2BitRealms\command\SubCommandMap;
 class _2BitFacs extends PluginBase implements Listener {
 	
 	public function onEnable(){
