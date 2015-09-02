@@ -1,4 +1,3 @@
-
 <?php
 namespace _2BitRealms;
 use pocketmine\utils\Config;
