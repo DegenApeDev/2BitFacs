@@ -1,4 +1,4 @@
-#2BitFacs Main Configuration 
+#2BitFacs Ppugin Main Configuration 
 #Copyright (C) 2015 2-Bit Realms
 #All Rights Reserved
 
@@ -12,5 +12,5 @@ ModsCanClaim: true
 ModsCanUnclaim: true
 
 #---[Staff Preferences]---#
-#Is the /f admin command allowed?
+#Is the /f bypass command allowed?
 AdminModeEnabled: false
