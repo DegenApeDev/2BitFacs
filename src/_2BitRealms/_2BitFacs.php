@@ -4,13 +4,16 @@ use pocketmine\utils\Config;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use _2BitRealms\command\SubCommandMap;
-use _2BitRealms\db\DataBase;
 class _2BitFacs extends PluginBase implements Listener {
 	
 	private $db;
 	
 	public function onEnable(){
+
+      //Events
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+
+      //Config
 		$this->saveDefaultConfig();
 		
 		//Commands
@@ -22,10 +25,6 @@ class _2BitFacs extends PluginBase implements Listener {
 	
 	public function getDatabase(){
 		return $this->db;
-	}
-	
-	public function setDatabase(Database $db){
-		$this->db = $db;
 	}
 	
 	public function onDisable(){

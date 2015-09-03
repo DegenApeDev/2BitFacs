@@ -44,7 +44,7 @@ class CreateSubCommand extends SubCommand {
 		$name = $args[0];
 		$leader = $sender;
 		$faction = new Faction($name, $leader);
-		$sender->getServer()->broadcastMessage(Colour::WHITE. $sender->getName(). Colour::YELLOW. " created the faction ". $name);
+		$sender->getServer()->broadcastMessage(Colour::WHITE. $sender->getName(). Colour::YELLOW. " created the faction ". Colour::WHITE. $name);
 		return true;
     }
 

@@ -1,5 +1,7 @@
 <?php
 namespace _2BitRealms\faction;
+use pocketmine\utils\TextFormat as Colour;
+use pocketmine\Server;
 class Faction {
 	
 	private $name;
@@ -18,7 +20,17 @@ class Faction {
 		$this->name = $name;
 		$this->description = "Default description :(";
 		$this->leader = $leader;
-		//TODO: Finish
+		
+		$this->broacastAll(Colour::WHITE. $leader->getDisplayName(). Colour::YELLOW. " created the faction ". Colour::WHITE. $name);
+		$leader->sendMessage(Colour::YELLOW. "Faction succesfully created!");
+	}
+	
+	public function broadcastAll($message){
+		foreach($this->getServer()->getOnlinePlayers() as $p){
+			if(!$p === $leader){
+				$p->sendMessage($message);
+			}
+		}
 	}
 	
 }

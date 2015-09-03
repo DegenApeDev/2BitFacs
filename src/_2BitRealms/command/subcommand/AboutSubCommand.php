@@ -11,7 +11,7 @@ class AboutSubCommand extends SubCommand {
     }
 	
     public function getUsage() {
-        return "[name]";
+        return "null";
     }
 	
     public function getName() {
