@@ -21,6 +21,7 @@ class _2BitFacs extends PluginBase implements Listener {
 	    
 	    //Database
 	    $this->db = new \SQLite3($this->getDataFolder() . "_2BitFacs.db");
+	    $this->db->exec("CREATE TABLE IF NOT EXISTS factions (name VARCHAR(255), description VARCHAR(255), leader VARCHAR(255), mods VARCHAR(255));");
 	}
 	
 	public function getDatabase(){
