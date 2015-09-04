@@ -5,6 +5,7 @@ use pocketmine\Player;
 use pocketmine\utils\TextFormat as Colour;
 use _2BitRealms\command\Subcommand;
 use _2BitRealms\faction\Faction;
+use _2BitRealms\_2BitFacs;
 class CreateSubCommand extends SubCommand {
 
     public function canUse(CommandSender $sender) {
@@ -44,7 +45,6 @@ class CreateSubCommand extends SubCommand {
 		$name = $args[0];
 		$leader = $sender;
 		$faction = new Faction($name, $leader);
-		$sender->getServer()->broadcastMessage(Colour::WHITE. $sender->getName(). Colour::YELLOW. " created the faction ". Colour::WHITE. $name);
 		return true;
     }
 

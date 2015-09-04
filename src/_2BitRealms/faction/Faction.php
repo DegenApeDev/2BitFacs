@@ -1,6 +1,6 @@
 <?php
 namespace _2BitRealms\faction;
-use _2BitRealms\_2BitFacs;
+use _2BitRealms\_2BitFacs as Main;
 use pocketmine\utils\TextFormat as Colour;
 use pocketmine\level\Position;
 use pocketmine\Server;
@@ -29,15 +29,19 @@ class Faction {
 		return $this->home;	
 	}
 	
-	public function __construct(Main $plugin, Player $leader, $name, Position $home = null){
+   //TO BE USED FOR INTERNAL USE ONLY
+	public function __construct(Main $plugin, Player $leader, $name){
 		$this->plugin = $plugin;
 		$this->name = $name;
 		$this->description = "Default description :(";
 		$this->leader = $leader;
-		$this->home = $home;
-		$this->players = array("Leader" => $leader->getDisplayName, "Mods" => "", "Members" => "";  //Can be used for /f who & getting the leader.
+		$this->players = array("Leader" => $leader->getDisplayName(), "Mods" => "", "Members" => "";  //Can be used for /f who & getting the leader.
+		
+		//Send the faction created message to everyone but the leader
 		$this->broacastAll(Colour::WHITE. $leader->getDisplayName(). Colour::YELLOW. " created the faction ". Colour::WHITE. $name);
 		$leader->sendMessage(Colour::YELLOW. "Faction succesfully created!");
+
+       //Store faction in a database
 		$this->storeFac();
 	}
 	
