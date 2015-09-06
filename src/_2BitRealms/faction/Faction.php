@@ -58,7 +58,7 @@ class Faction {
 	
 	public function broadcastAll($message){
 		foreach($this->getServer()->getOnlinePlayers() as $p){
-			if(!$p === $leader){
+			if(!$p === $this->leader){
 				$p->sendMessage($message);
 			}
 		}
