@@ -33,12 +33,47 @@ class Faction {
 		return $this->arrayString($this->members);
 	}
 	
-	//If a Moderaotr, player will be demoted to Member. If player is a Members, that player will be kicked from the faction.
-	public function demote($player) {
+	/* Will make a player in the faction the leader.
+		PROMOTE TO LEADER
+	*/
+	public function setLeader(Player $player) {
+		
+	}
+	
+	/* If a Moderaotr, player will be demoted to Member. If player is a Members, that player will be kicked from the faction.
+		DEMOTE
+	*/
+	public function demote(Player $player) {
 		$mods = $this->getMods();
 		$members = $this->getMembers();
 		foreach($mods as $key => $mod) {
-			if($mod === $player) {
+			if($mod === $player->getName()) {
+				unset($mods[$key]);
+				array_push($members, $mod);
+				$this->mods = implode(",", $mods);
+				$this->members = implode(",", $members);
+				$this->storeFac();
+				return;
+			}
+		}
+		foreach($this->members as $key => $member) {
+			if($member === $player) {
+				unset($members[$key]);
+				$this->members = implode(",", $members);
+				$this->storeFac();
+				return;
+			}
+		}
+	}
+	
+	/* If a Moderaotr, player will be demoted to Member. If player is a Members, that player will be kicked from the faction.
+		PROMOTE
+	*/
+	public function promote(Player $player) {
+		$mods = $this->getMods();
+		$members = $this->getMembers();
+		foreach($mods as $key => $mod) {
+			if($mod === $player->getName()) {
 				unset($mods[$key]);
 				array_push($members, $mod);
 				$this->mods = implode(",", $mods);
@@ -76,7 +111,15 @@ class Faction {
 	
 	public function storeFac() {
 		$db = $this->plugin->db;
-		$sql = $db->prepare("INSERT INTO factions (name, description, leader, mods, members) VALUES (:name, :description, :leader, :mods, :members);");
+		$facname = $this->name;
+		$sql = $db->prepare("INSERT OR IGNORE INTO factions (name, description, leader, mods, members) VALUES (:name, :description, :leader, :mods, :members);");
+		$sql->bindValue(":name", $this->name);
+		$sql->bindValue(":description", $this->description);
+		$sql->bindValue(":leader", $this->leader);
+		$sql->bindValue(":mods", $this->mods);
+		$sql->bindValue(":members", $this->members);
+		$result = $sql->execute();
+		$sql = $db->prepare("UPDATE factions SET name = :name, description = :description, leader = :leader, mods = :mods, members = :members WHERE name = $facname);");
 		$sql->bindValue(":name", $this->name);
 		$sql->bindValue(":description", $this->description);
 		$sql->bindValue(":leader", $this->leader);
